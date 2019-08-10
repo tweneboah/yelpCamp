@@ -8,7 +8,13 @@ app.set("view engine", "ejs");
 //======================
 // DB CONNECTION
 //==============
-mongoose.connect('mongodb://localhost/yelpCampV2');
+// mongoose.connect('mongodb://localhost/yelpCampV2');
+
+mongoose.connect('mongodb://localhost/Budget-App', {
+ useNewUrlParser: true,
+ useCreateIndex: true
+})
+.then(() => console.log("DB Connected successfully"));
 
 //==============
 //SCHEMA
@@ -30,6 +36,14 @@ app.get("/", function(req, res){
     res.render("landing");
 });
 
+//=================
+// GET THE FORM
+//=================
+
+app.get("/campgrounds/new", function(req, res){
+    res.render("new.ejs"); 
+ });
+ 
 
 //==================================
 //INDEX PAGE -> Show all campgrounds
@@ -88,13 +102,6 @@ app.get('/campgrounds/:id', (req, res) => {
 
 
 
-//=================
-// GET THE FORM
-//=================
-
-app.get("/campgrounds/new", function(req, res){
-   res.render("new.ejs"); 
-});
 
 
 //=================
