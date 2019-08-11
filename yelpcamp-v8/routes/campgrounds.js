@@ -54,7 +54,7 @@ router.post("/", isLoggedIn ,function(req, res){
     }
 
  //Create a new campground and save to DB
- Campground.author.push(req.user.username).create(newCampground, (err, newlyCreated) => {
+ Campground.create(newCampground, (err, newlyCreated) => {
      if(err){
          //console.log(err)
      }else {

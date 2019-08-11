@@ -12,7 +12,7 @@ function isLoggedIn(req, res, next){
 
 
 //GET FORM
-router.get("/new", function(req, res){
+router.get("/new", isLoggedIn, function(req, res){
  
  res.render("campgrounds/new.ejs"); 
 });
