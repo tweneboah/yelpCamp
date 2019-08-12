@@ -22,6 +22,8 @@ app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 app.use(methodOverride('_method')); //is by default
 
+//app.locals.moment = require('moment');
+app.locals.moment = require('moment')
 
 //seed()
 //======================
